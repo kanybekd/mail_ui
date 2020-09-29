@@ -218,9 +218,11 @@ header {
       z-index: 1;
       left: 100%;
       top: 3px;
+      
     }
     .left-tag:hover .tooltiptext{
       visibility: visible;
+      font-size: 13px;
     }
 
 
@@ -299,10 +301,6 @@ header {
   .bottom-icons span{
     margin: 5px;
   }
-  
-  
- 
-  
 
 main {
   flex-grow: 1;
