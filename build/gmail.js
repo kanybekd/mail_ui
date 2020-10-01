@@ -45,13 +45,11 @@ function displayData(fetch_output){
         const id = event.target.getAttribute('id')
         const classNames = event.target.getAttribute('class')
         // THIS SECTION IS FOR NAVBAR "Meet" and "Hangouts"
-        if(classNames.includes('hangout-icons')) {
+        if(id === 'btm-icon-user' || id === 'btm-icon-comment' || id === 'btm-icon-phone') {
             // console.log ('youClicked bottom icons')
-            document.querySelector('.meet-and-hangouts').toggle()
-           
-             
+            document.querySelector('#meet-and-hangouts-container').classList.toggle('meet-and-hangouts-2');
         }
-
+        
 
         // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
         if(id === 'primary' || id === 'social' || id === 'promotions'){

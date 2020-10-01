@@ -150,9 +150,12 @@ header {
       }
 
 /* LEFT SIDE-BAR MEET SECTION */
-/* .meet-and-hangouts{
+.meet-and-hangouts{
+  visibility:visible;
+}
+.meet-and-hangouts-2{
   visibility: hidden;
-} */
+}
 .meet {
   border-top: 1px solid rgb(238, 236, 236);
   border-bottom: 1px solid rgb(238, 236, 236);
@@ -298,12 +301,11 @@ header {
   .bottom-icons  {
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 0 30px;
     
   }
-  .bottom-icons span{
-    margin: 5px;
-  }
+  
 
 main {
   flex-grow: 1;
