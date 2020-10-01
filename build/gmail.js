@@ -40,10 +40,18 @@ function displayData(fetch_output){
         }
     })
     
-
+        
     document.body.addEventListener('click', event => {
         const id = event.target.getAttribute('id')
-        // const classNames = event.target.getAttribute('class')
+        const classNames = event.target.getAttribute('class')
+        // THIS SECTION IS FOR NAVBAR "Meet" and "Hangouts"
+        if(classNames.includes('hangout-icons')) {
+            // console.log ('youClicked bottom icons')
+            document.querySelector('.meet-and-hangouts').toggle()
+           
+             
+        }
+
 
         // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
         if(id === 'primary' || id === 'social' || id === 'promotions'){
@@ -140,18 +148,18 @@ function displayData(fetch_output){
         }
 
         // THIS SECTION IS FOR SELECTING INDIVIDUAL INPUT ELEMENTS IN THE EMAIL LIST
-        if(document.getElementById(id).checked){
-            // console.log('you checked single input inside list el')
-            document.querySelector('#main-top-left').classList.remove('main-top-left-before');
-            document.querySelector('#main-top-left').classList.add('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'none';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
-        } else {
-            document.querySelector('#main-top-left').classList.add('main-top-left-before');
-            document.querySelector('#main-top-left').classList.remove('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'block';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
-        }
+        // if(document.getElementById(id).checked){
+        //     // console.log('you checked single input inside list el')
+        //     document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+        //     document.querySelector('#main-top-left').classList.add('main-top-left-after');
+        //     document.querySelector('#main-top-left-refresh').style.display = 'none';
+        //     document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
+        // } else {
+        //     document.querySelector('#main-top-left').classList.add('main-top-left-before');
+        //     document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+        //     document.querySelector('#main-top-left-refresh').style.display = 'block';
+        //     document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+        // }
 
     })
     

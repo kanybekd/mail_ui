@@ -150,6 +150,9 @@ header {
       }
 
 /* LEFT SIDE-BAR MEET SECTION */
+/* .meet-and-hangouts{
+  visibility: hidden;
+} */
 .meet {
   border-top: 1px solid rgb(238, 236, 236);
   border-bottom: 1px solid rgb(238, 236, 236);
@@ -164,7 +167,7 @@ header {
     position: absolute;
     top: -5px;
     left: 50%;
-    color:rgb(215,215,215)
+    color:rgb(204, 206, 208)
     /* border: 1px solid red; */
   }
   .meet p {
