@@ -9,6 +9,7 @@
     <title>GMAIL CLONE</title>
   </head>
   <body>
+    <!-- KANYBEK'S PART START HERE -->
     <header>
       <div class="left">
         <div><img class="header-icon" src="images/burger-menu.png" /></div>
@@ -17,7 +18,9 @@
       </div>
 
       <div class="middle">
-        <input id="search" type="text" placeholder="Search mail" />
+        <input id="search-input" type="text" placeholder="Search mail" />
+        <i id="search-icon" class="fa fa-search"></i>
+        <div id="unfound-error-message"></div>
       </div>
 
       <div class="right">
@@ -27,9 +30,11 @@
         <img class="header-icon lg" src="images/user-icon.png" />
       </div>
     </header>
+    <!-- KANYBEK'S PART ENDS HERE -->
 
     <div class="flex-wrapper">
       <aside class="sidebar">
+
         <!-- KARLYGACH'S PART START HERE -->
         <div class="compose">
           <img id="compose-plus-icon" src="./images/gm-plus-icon.png" alt="gmail compose plus icon"><span id="compose-text">Compose</span>
@@ -49,7 +54,7 @@
           <div class="trash left-tag">
             <img id="sidebar-trash-icon" src="./images/trash-icon.png" />
             <span>Trash</span>
-            <span id="trash-counter" style="color: red;"></span>
+            <span id="trash-counter" style="color: red;">0</span>
           </div>
           <div class="spam left-tag">
             <img id="sidebar-spam-icon" src="images/spam-icon.png" />
@@ -98,7 +103,6 @@
         </div>
         <!-- KUMAR'S PART ENDS HERE -->
       </aside>
-      
       <main>
         <!-- KANYBEK'S PART STARTS HERE -->
         <section class="main-top">
@@ -107,6 +111,9 @@
               <div class="main-top-left-checkbox-down">
                 <input type="checkbox" id="main-top-checkbox">
                 <i id="main-top-left-fa-arrow-down" class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+              <div class="email-content-back-button">
+                <i id="email-content-back-button" class="fa fa-arrow-left"></i>
               </div>
               <i id="main-top-left-refresh" class="fa fa-redo" aria-hidden="true"></i>
               <div class="main-top-checkbox-checked-div">
@@ -143,9 +150,9 @@
             <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
           </div>
           <div class="main-top-right">
-            <p class="pagination">1-50 of 1,230</p>
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <p class="pagination"><span id="num-of-start-email">1</span> - <span id="num-of-end-email">20</span> of <span id="num-of-total-emails">50</span></p>
+            <i id="pagination-left-arrow" class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i id="pagination-right-arrow" class="fa fa-arrow-right" aria-hidden="true"></i>
             <div>
               <i class="fa fa-keyboard" aria-hidden="true"></i>
               <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -158,9 +165,9 @@
         <div class="email-body">
           <section id="type-bar">
               <ul id="nav-ul-el">
-                <li class="nav-list active-bot-red" id="primary"><i class="fas fa-inbox"></i>Primary</li>
-                <li class="nav-list" id="social"><i class="fas fa-user-friends"></i>Social</li>
-                <li class="nav-list" id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+                <li class="nav-list active-bot-red" id="primary"><i class="fa fa-inbox"></i>Primary</li>
+                <li class="nav-list" id="social"><i class="fa fa-users"></i>Social</li>
+                <li class="nav-list" id="promotions"><i class="fa fa-tag"></i>Promotions</li>
               </ul>
           </section>
           <!-- ULANBEK'S PART ENDS HERE -->
@@ -186,6 +193,42 @@
           </section>
         </div>
         <!-- AZAMAT'S PART ENDS HERE -->
+        
+        <div class="email-content">
+
+          <div class="email-content-top">
+              <div class="email-content-title">Amazon.com: New shipment for order # 102510306</div>
+              <div class="print-and-new-window">
+                  <i class="fa fa-print"></i>
+                  <i class="fa fa-arrow-circle-right"></i>
+              </div>          
+          </div>
+  
+          <div class="email-content-middle">
+            <div class="email-content-middle-sender-info">Amazon USA Service 'service@amazon.com'</div>
+            <div class="time-and-add-icons">
+                <div>Time</div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-reply"></i>
+                <i class="fa fa-ellipsis-v"></i>
+            </div>
+          </div>
+          
+          <div class="email-content-bottom">
+            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+          </div>
+  
+          <div class="reply-forward">
+              <div class="reply-forward-common">
+                  <i id="reply-forward-reply-icon" class="fa fa-reply"></i>
+                  <span>Reply</span>
+              </div>
+              <div class="reply-forward-common">
+                  <i id="reply-forward-forward-icon" class="fa fa-arrow-right"></i>
+                  <span>Forward</span>
+              </div>
+          </div>
+        </div>
       </main>
       <!-- RUSTAM'S PART STARTS HERE -->
       <aside class="aside-right">
@@ -194,6 +237,9 @@
         <i class="fa fa-inbox" aria-hidden="true"></i>
         <i class="fa fa-inbox" aria-hidden="true"></i>
       </aside>
+      <div hidden>
+
+      </div>
       <!-- RUSTAM'S PART ENDS HERE -->
 
 
@@ -211,7 +257,6 @@
           <div><button>Send</button> button and other icons</div>
         </div>
       </div>
-
     </div>
   </body>
   <script type="text/javascript" src="../build/gmail.js"></script>

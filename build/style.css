@@ -15,6 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(238, 236, 236);
+  font-family: Arial, Helvetica, sans-serif;
 }
   header .header-icon {
     max-width: 20px;
@@ -48,26 +49,40 @@ header {
     margin: 0 10px;
   }
   header .middle {
-    flex: 5;
+    flex: 3;
+    position: relative;
   }
-  header .middle input {
-    background: url('../images/search-icon.png') no-repeat;
-    background-size: 18px;
-    background-position: left center;
-    background-position-x: 10px;
-    background-color: rgba(242, 245, 245, 0.8);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 20px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
+
+  header .middle #search-input {
     min-width: 240px;
     max-width: 600px;
     width: 90%;
+    padding: 20px 20px 20px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    /* border: 1px solid red; */
   }
-  header .middle input:focus {
+
+  .middle #search-icon {
+    position: absolute;
+    left: 5px;
+    top: 18px;
+    font-size: 20px;
+  }
+
+  .middle #unfound-error-message {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: -5px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  header .middle #search-input:focus {
     border: none;
     background-color: transparent;
     box-shadow: 0 1px 1px 2px lightgray;
@@ -323,6 +338,10 @@ main {
             background-color:  rgb(238, 236, 236);
           }
 
+    .email-content-back-button {
+      display: none;
+    }
+   
     #main-top-left-refresh {
       display: block;
     }
@@ -476,8 +495,6 @@ main {
   margin-right: 10px;
 }
 
-
-
 #child4 {
   width: 180px;
   overflow: hidden;
@@ -506,6 +523,82 @@ main {
   width: 20px;
   height: 20px;
   margin-left: 10px;
+}
+
+.email-content {
+  overflow-y: scroll;
+  height: calc(100vh - 116px);
+  padding: 10px;
+  display: none;
+}
+
+.email-content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+
+.email-content-title {
+  font-size: 24px;
+}
+
+.print-and-new-window {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+}
+
+.email-content-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.email-content-middle-sender-info {
+  font-weight: bold;
+}
+
+.time-and-add-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+}
+
+.email-content-bottom {
+  border: 1px solid rgb(212, 209, 209);
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.email-content-bottom p {
+  min-height: 400px;
+  text-indent: 20px;
+}
+
+.reply-forward {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.reply-forward * {
+  margin-right: 10px;
+}
+
+.email-content i {
+  font-size: 20px;
+}
+
+.reply-forward-common {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .aside-right {

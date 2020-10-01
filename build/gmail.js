@@ -1,493 +1,90 @@
+let urlPrimary = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=primary';
+let urlSocial = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=social';
+let urlPromotions = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=promotions';
 const primaryEmails = {};
+const socialEmails = {};
+const promotionsEmails = {};
 var keyArray = [];
 
-const fetch_output = [
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Seytech Co',
-      senderEmail: 'support@seytech.com',
-      messageTitle: 'Enrollment start date',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object], [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Heroku',
-      senderEmail: 'heroku@heroku.com',
-      messageTitle: 'Excited to announce our new feature',      
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Facebook',
-      senderEmail: 'facebook@facebook.com',
-      messageTitle: 'Today is your friends birthday!',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'AICamp',
-      date: '2020-09-29T15:20:26.708Z',
-      senderEmail: 'admin@atiglobal.org',
-      messageTitle: 'New AI Course Scheduled: 4-Weeks Practical Python for Machine Learning.',
-      isRead: false,
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Uber',
-      senderEmail: 'support@uber.com',
-      messageTitle: 'This offer ends soon',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: true },
-      senderName: 'GoFundMe',
-      senderEmail: 'hello@marketing.gofundme.com',
-      messageTitle: 'Please, your help is needed',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: true },
-      senderName: 'Zuzanna Kozlecka',
-      senderEmail: 'zkozlecka@mail.edu',
-      messageTitle: 'Please, your help is needed',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
+fetch(urlPrimary)
+.then(response => response.json())
+.then((output) => {
+    for(let i=0;i<output.items.length;i++){
+        primaryEmails[i] = output.items[i]
     }
-  ]
+    displayData(primaryEmails);
+})
+.catch(error => { throw error });
 
-for(let i=0; i<fetch_output.length;i++){
-    primaryEmails[i] = fetch_output[i]
-}
+fetch(urlSocial)
+.then(response => response.json())
+.then((output) => {
+    for(let i=0;i<output.items.length;i++){
+      socialEmails[i] = output.items[i]
+    }
+})
+.catch(error => { throw error });
 
-// console.log(primaryEmails)
+fetch(urlPromotions)
+.then(response => response.json())
+.then((output) => {
+    for(let i=0;i<output.items.length;i++){
+      promotionsEmails[i] = output.items[i]
+    }
+})
+.catch(error => { throw error });
 
-function displayData(){
-    keyArray = [];
-    for(let key in primaryEmails){
-        if(!primaryEmails[key].tags.isTrash){
+function displayData(email_category_dataset){
+  keyArray = [];
+    for(let key in email_category_dataset){
+        if(!email_category_dataset[key].tags.isTrash){
             if(!keyArray.includes(Number(key))){
-                keyArray.push(Number(key));
-                createElements(key);
+              keyArray.push(Number(key));
+              createElements(key, email_category_dataset);
             }
         }
     }
+    displayDataStarred(email_category_dataset);
 }
-    
-displayData();
+
+function displayDataStarred(email_category_dataset_starred){
+  for(let key in email_category_dataset_starred){
+      if(email_category_dataset_starred[key].tags.isStarred){
+          document.querySelectorAll('.ul-li-list #child3')[key].style.color = '#fe7e00';
+      }
+  }
+}
+
+displayData(primaryEmails);
+displayDataStarred(primaryEmails);
 
 document.body.addEventListener('click', function(event){
-    const id = event.target.getAttribute('id')
+    const id = event.target.getAttribute('id');
 
-    // THIS SECTION
+    // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
-        document.querySelectorAll('#email-ul-list li').forEach(item => {
-            item.remove();
-        })
-        displayData();
+      removeAllEmailsFromEmailList();
+      displayData(primaryEmails);
+      removeActiveBotRedFromEachCategory(primaryEmails);
     }
 
-    // THIS SECTION
-    if(id === 'main-top-trash-icon'){
-        document.querySelectorAll('#email-ul-list li input').forEach(item => {
+    // THIS SECTION IS FOR SOCIAL CATEGORY EMAILS
+    if(id === 'social'){
+      removeAllEmailsFromEmailList();
+      displayData(socialEmails);
+      removeActiveBotRedFromEachCategory(socialEmails)
+    }
+
+    // THIS SECTION IS FOR PROMOTIONS CATEGORY EMAILS
+    if(id === 'promotions'){
+      removeAllEmailsFromEmailList();
+      displayData(promotionsEmails);
+      removeActiveBotRedFromEachCategory(promotionsEmails);
+    }
+
+    // THIS SECTION IS FOR SELECING INDIVIDUAL EMAILS IN THE EMAIL-LIST AND TRASHING THEM
+    if(id === 'trash-email'){
+        document.querySelectorAll('#email-ul-list .ul-li-list input').forEach(item => {
             if(item.checked){
                 item.parentElement.remove();
                 document.querySelector('#trash-counter').innerText++;
@@ -496,16 +93,24 @@ document.body.addEventListener('click', function(event){
         })
     }
 
-    // THIS SECTION
+    // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR INBOX ICON AND DISPLAYING ALL EMAILS
+    if(id === 'sidebar-inbox-icon'){
+      document.querySelector('.email-content-back-button').style.display = 'none';
+      document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
+      undisplayMainTopLeft();
+      primaryAndInbox();
+      document.querySelectorAll('.nav-list').forEach(item => {
+        item.classList.remove('active-bot-red');
+      })
+      document.querySelector('#primary').classList.add('active-bot-red');
+    }
+
+    // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR TRASH ICON AND DISPLAYING ALL TRASHED EMAILS
     if(id === 'sidebar-trash-icon'){
-        document.querySelectorAll('#email-ul-list li').forEach(item => {
-            item.remove();
-        })
-        for(let key in primaryEmails){
-            if(primaryEmails[key].tags.isTrash){
-                createElements(key);
-            }
-        }
+      removeAllEmailsFromEmailList();
+      filterTrashedEmailsFromEachCategory(primaryEmails);
+      filterTrashedEmailsFromEachCategory(socialEmails);
+      filterTrashedEmailsFromEachCategory(promotionsEmails);
     }
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
@@ -521,7 +126,7 @@ document.body.addEventListener('click', function(event){
         document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
     }
 
-    // THIS SECTION IS ...
+    // THIS SECTION IS FOR REFRESHING EMAIL-LIST SCREEN AND FETCH IF THERE IS ANY NEW EMAILS
     if(id === 'main-top-left-refresh'){
         // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
         document.querySelector('.main-top-middle').style.display = 'block'
@@ -530,30 +135,170 @@ document.body.addEventListener('click', function(event){
         }, 1500);
     }
 
-    // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
+    // THIS SECTION IS FOR CHECK MARKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
     if(id === 'main-top-checkbox'){
         if(document.querySelector('#main-top-checkbox').checked){
-            document.querySelectorAll('.ul-li-list input').forEach(item => {
-                item.checked = true;
-            })
-            document.querySelector('#main-top-left').classList.remove('main-top-left-before');
-            document.querySelector('#main-top-left').classList.add('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'none';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'block';
+            document.querySelectorAll('.ul-li-list input').forEach(item => item.checked = true)
+            displayMainTopLeft();
         } else {
-            document.querySelectorAll('.ul-li-list input').forEach(item => {
-                item.checked = false;
-            })
-            document.querySelector('#main-top-left').classList.add('main-top-left-before');
-            document.querySelector('#main-top-left').classList.remove('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'block';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+            document.querySelectorAll('.ul-li-list input').forEach(item => item.checked = false)
+            undisplayMainTopLeft();
         }
+    }
+
+    // THIS SECTION IS FOR CLICKING ANY CHECKBOX ELEMENT IN THE EMAIL-LIST AND DISPLAY/UNDISPLAY A DIV IN THE MAIN-TOP-LEFT SECTION
+    if(id === 'child2'){
+        if(clickingIEachCheckbox()){
+            displayMainTopLeft();
+        } else {
+            undisplayMainTopLeft();
+        }
+    }
+
+    // THIS SECTION IS FOR DISPLAYING ALL OF THE STARRED EMAILS IN ALL OF THE CATEGORIES
+    if(id === 'sidebar-starred-icon'){
+      removeAllEmailsFromEmailList();
+      filterStarredEmailsFromEachCategory(primaryEmails);
+      filterStarredEmailsFromEachCategory(socialEmails);
+      filterStarredEmailsFromEachCategory(promotionsEmails);
+    }
+
+    // THIS SECTION IS FOR CLICKING EACH EMAIL IN THE EMAIL-LIST
+    if(clickingIEachLists(id)){
+        document.querySelector('.email-body').style.display = 'none';        
+        document.querySelector('.email-content').style.display = 'block';
+        document.querySelector('.email-content-back-button').style.display = 'block';
+        document.querySelector('.main-top-left-checkbox-down').style.display = 'none';
+        displayMainTopLeft();
+        for(let key in primaryEmails){
+          if(key === id){
+            document.querySelector('.email-content-title').innerHTML = primaryEmails[key].messageTitle
+            document.querySelector('.email-content-middle-sender-info').innerHTML = primaryEmails[key].senderName + ' ' + primaryEmails[key].senderEmail
+            document.querySelector('.email-content-bottom').innerHTML = primaryEmails[key].messages[0].message
+          }
+        }
+    }
+
+    // THIS SECTION IS FOR GOING BACK TO THE MAIN INBOX AFTER ACCESSING ANY EMAIL
+    if(id === 'email-content-back-button'){
+        document.querySelector('.email-content-back-button').style.display = 'none';
+        document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
+        primaryAndInbox();
+        undisplayMainTopLeft()
+    }
+
+    // THIS SECTION IS FOR SEARCHING EMAILS
+    if(id === 'search-icon'){
+      if(document.querySelector('#search-input').value !== ""){
+        removeAllEmailsFromEmailList();
+        searchEachCategoryAndPresentData(primaryEmails);
+        searchEachCategoryAndPresentData(socialEmails);
+        searchEachCategoryAndPresentData(promotionsEmails);
+        if(!document.querySelectorAll('.ul-li-list').length){
+          document.querySelector('#unfound-error-message').innerText = `SORRY, WE COULDN\'T FIND ANYTHING RELATED TO "${document.querySelector('#search-input').value}"`
+          setTimeout(function(){
+            document.querySelector('#unfound-error-message').innerText = "";
+          }, 2000)
+        }
+      }
+    }
+
+    // THIS SECTION IS FOR LEFT PAGINATION
+    if(id === 'pagination-left-arrow'){
+      console.log('pagination-left-arrow')
+    }
+
+    // THIS SECTION IS FOR RIGHT PAGINATION
+    if(id === 'pagination-right-arrow'){
+      console.log('pagination-right-arrow')
     }
 })
 
-function createElements(data_key){
-    // console.log(keyArray)
+function removeAllEmailsFromEmailList(){
+  document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
+    item.remove();
+  })
+}
+
+function removeActiveBotRedFromEachCategory(email_category_dataset){
+  document.querySelectorAll('.nav-list').forEach(item => {
+    item.classList.remove('active-bot-red');
+  })
+  event.target.classList.add('active-bot-red');
+}
+
+function filterTrashedEmailsFromEachCategory(email_category_dataset){
+  for(let key in email_category_dataset){
+    if(email_category_dataset[key].tags.isTrash){
+        createElements(key, email_category_dataset);
+    }
+  }
+}
+
+function filterStarredEmailsFromEachCategory(email_category_dataset){
+  for(let key in email_category_dataset){
+    if(email_category_dataset[key].tags.isStarred){
+      createElements(key, email_category_dataset);
+    }
+  }
+}
+
+function searchEachCategoryAndPresentData(email_category_dataset){
+  for(let key in email_category_dataset){
+    let searchArray = [];
+    for(let item in email_category_dataset[key]){
+      if(typeof email_category_dataset[key][item] === 'string'){
+          searchArray.push(email_category_dataset[key][item].toLowerCase());
+      }
+    }
+    if(searchArray.some(item => item.includes((document.querySelector('#search-input').value).toLowerCase()))){
+      createElements(key, email_category_dataset);
+    } 
+  }
+}
+
+function primaryAndInbox(){
+    document.querySelector('.email-content').style.display = 'none';
+    document.querySelector('.email-body').style.display = 'block';
+    document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
+        item.remove();
+    })
+    displayData(primaryEmails);
+}
+
+function clickingIEachCheckbox(){
+    let arr = [...document.querySelectorAll('#child2')];
+    return arr.some(item => item.checked);
+}
+
+function clickingIEachLists(id){
+    if(id !== null){
+        let arr = [...document.querySelectorAll('.ul-li-list')]
+        arr.forEach((item, index) => {
+            arr[index] = Number(item.getAttribute('id'));
+        })
+        console.log(arr);
+        if(arr.includes(Number(id))){
+            return true;
+        }
+    }
+}
+
+function displayMainTopLeft(){
+    document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+    document.querySelector('#main-top-left').classList.add('main-top-left-after');
+    document.querySelector('#main-top-left-refresh').style.display = 'none';
+    document.querySelector('.main-top-checkbox-checked-div').style.display = 'block';
+}
+
+function undisplayMainTopLeft(){
+    document.querySelector('#main-top-left').classList.add('main-top-left-before');
+    document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+    document.querySelector('#main-top-left-refresh').style.display = 'block';
+    document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+}
+
+function createElements(data_key, dataSet){
     const email_ul_list = document.querySelector('#email-ul-list');
 
     const email_ul_li_list = document.createElement('li');
@@ -564,8 +309,6 @@ function createElements(data_key){
     const email_list_child5 = document.createElement('div');
     const email_list_child6 = document.createElement('div');
     const email_list_child7 = document.createElement('div');
-
-    // console.log(email_ul_list);
 
     email_ul_li_list.setAttribute('class', 'ul-li-list');
     email_list_child1.setAttribute('class', 'common first-last fa fa-ellipsis-v');
@@ -586,9 +329,9 @@ function createElements(data_key){
     email_list_child6.setAttribute('id', 'child6');
     email_list_child7.setAttribute('id', 'child7');
 
-    email_list_child4.innerText = primaryEmails[data_key].senderEmail;
-    email_list_child5.innerText = primaryEmails[data_key].messageTitle;
-    email_list_child6.innerText = primaryEmails[data_key].date.slice(11, 19) + ' PM';
+    email_list_child4.innerText = dataSet[data_key].senderEmail;
+    email_list_child5.innerText = dataSet[data_key].messageTitle;
+    email_list_child6.innerText = dataSet[data_key].date.slice(11, 19) + ' PM';
     email_list_child7.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
 
     email_ul_li_list.appendChild(email_list_child1);    
@@ -601,221 +344,3 @@ function createElements(data_key){
 
     email_ul_list.appendChild(email_ul_li_list)
 }
-
-
-// let urlPrimary = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=primary';
-// let urlSocial = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=social';
-// let urlPromotions = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=promotions';
-// const primaryEmails = {};
-// const initialEmails = {};
-// const socialEmails = {};
-// const promotionsEmails = {};
-// const trashObject = {};
-// // const inboxObject = {};
-// const spamObject = {};
-// const starredObject = {};
-
-// fetch(urlPrimary)
-// .then(response => response.json())
-// .then((output) => {
-//     for(let i=0;i<output.items.length;i++){
-//         primaryEmails[i] = output.items[i]
-//     }
-//     // console.log('Length of output.items', output.items.length)
-
-//     displayData();
-// })
-// .catch(error => { throw error });
-
-// function displayData(){
-
-//     // console.log('fetch_output inside the displayData function', fetch_output)
-//     console.log('primaryEmails inside the displayData function', primaryEmails)
-//     // const primaryBtn = document.getElementById('primary')
-//     const mainUl = document.getElementById('email-list-ul-el')
-    
-//     for(let key in primaryEmails){
-//         if(!primaryEmails[key].tags.isTrash){
-//             initialEmails[key] = primaryEmails[key]
-//         }
-//     }
-//     createElements(initialEmails);
-
-// document.querySelector('.main-ul-li-class').addEventListener('mouseover', function(e){
-//     if(e.target.tagName === 'LI'){
-//         document.querySelectorAll('.main-ul-li-class').forEach(element => {
-//             element.firstChild.style.display = 'none';
-//             element.lastChild.style.display = 'none';
-//         });
-//         e.target.firstChild.classList.add('first-child')
-//         e.target.lastChild.classList.add('last-child')
-//     }
-// })
-
-
-// document.body.addEventListener('click', event => {
-//     const id = event.target.getAttribute('id');
-//     // const classNames = event.target.getAttribute('class')
-
-//     // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
-//     if(id === 'primary'){
-//         if(!event.target.className.includes('active-bot-red')){
-//             document.querySelectorAll('.nav-list').forEach(item => {
-//                 item.classList.remove('active-bot-red');
-//             })
-//             event.target.classList.add('active-bot-red')
-//             createElements(primaryEmails);
-//         }
-//     }
-
-//     // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
-//     if(id === 'social'){
-//         if(!event.target.className.includes('active-bot-red')){
-//             document.querySelectorAll('.nav-list').forEach(item => {
-//                 item.classList.remove('active-bot-red');
-//             })
-//             event.target.classList.add('active-bot-red')
-//             createElements(primaryEmails);
-//         }
-//     }
-
-//     // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
-//     if(id === 'promotions'){
-//         if(!event.target.className.includes('active-bot-red')){
-//             document.querySelectorAll('.nav-list').forEach(item => {
-//                 item.classList.remove('active-bot-red');
-//             })
-//             event.target.classList.add('active-bot-red')
-//             createElements(primaryEmails);
-//         }
-//     }
-
-//     // THIS SECTION IS FOR CHECKING AND REMOVING EACH EMAIL
-//     if(id === 'trash-email'){
-//         document.querySelectorAll('.main-ul-li-class input').forEach(item => {
-//             if(item.checked){
-//                 // trashObject[item.parentElement.getAttribute('data-id')] = item.parentElement;
-//                 // console.log(trashObject);
-//                 // console.log(item.parentElement.getAttribute('data-id'))
-//                 // console.log('lenght of main-ul-li-class elements - trash icon', document.querySelectorAll('.main-ul-li-class').length)
-//                 // trashObject[item.parentElement.getAttribute('data-id')] = primaryEmails[item.parentElement.getAttribute('data-id')]
-//                 // document.querySelector('#trash-counter').innerText = Object.keys(trashObject).length
-//                 primaryEmails[item.parentElement.getAttribute('data-id')].tags.isTrash = true;
-//                 item.parentElement.remove();
-//                 // delete primaryEmails[item.parentElement.getAttribute('data-id')]
-//             }
-//             let counter = 0;
-
-//             for(let key in primaryEmails){
-//                 if(primaryEmails[key].tags.isTrash){
-//                     // console.log('isTrash true', key)
-//                     counter++;
-//                 }
-//             }
-//             document.getElementById('trash-counter').innerText = counter;
-//         })
-//     }
-
-//     // THIS SECTION IS FOR OPENING TRASH AND DISPLAYING TRASHED EMAILS
-//     if(id === 'sidebar-trash-icon'){
-//         // console.log('clicked trash yay')
-//         document.querySelectorAll('.main-ul-li-class').forEach(item => {
-//             item.remove();
-//         })
-//         // console.log(document.querySelectorAll('.mainUlLiClass').length)
-//         // createElements(trashObject)
-//         document.querySelector('#nav-ul-el').style.display = 'none';
-//         for(let key in primaryEmails){
-//             if(primaryEmails[key].tags.isTrash){
-//                 trashObject[key] = primaryEmails[key]
-//             }
-//         }
-//         console.log(trashObject);
-//         createElements(trashObject);
-
-//     }
-
-//     // THIS SECTION IS FOR OPENING INBOX
-//     if(id === 'sidebar-inbox-icon'){
-//         console.log('clicked inbox yay')
-//         // console.log('lenght of main-ul-li-class elements - inbox icon', document.querySelectorAll('.main-ul-li-class').length)
-
-//         // document.querySelectorAll('.mainUlLiClass').forEach(item => {
-//         //     item.remove();
-//         // })
-//         // console.log(document.querySelectorAll('.mainUlLiClass').length)
-//         // console.log('primary email result after pressing inbox icon =', primaryEmails)
-//         // for(let key in primaryEmails){
-//         //     if
-//         // }
-//         let inboxObject = {};
-//         console.log(inboxObject)
-//         for(let key in primaryEmails){
-//             if(!primaryEmails[key].tags.isTrash){
-//                 inboxObject[key] = primaryEmails[key];
-//             }
-//         }
-//         console.log(inboxObject);
-//         createElements(inboxObject);
-//         document.querySelector('#nav-ul-el').style.display = '';
-//         // console.log(Object.keys(primaryEmails).length)
-//     }
-
-//     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
-//     if(id === 'compose-plus-icon' || id === 'compose-text'){
-//         document.querySelector('.email-compose-screen').style.display = 'block'
-//     }
-//     if(id === 'close-new-message-screen'){
-//         document.querySelector('.email-compose-screen').style.display = 'none'
-//     }
-
-//     // THIS SECTION IS FOR DISPLAYING OPTIONS FOR MAIN-TOP-LEFT-ARROW-DOWN ICON
-//     if(id === 'main-top-left-fa-arrow-down'){
-//         document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
-//     }
-
-//     // THIS SECTION IS ...
-//     if(id === 'main-top-left-refresh'){
-//         // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
-//         document.querySelector('.main-top-middle').style.display = 'block'
-//         setTimeout(function () {
-//             document.querySelector('.main-top-middle').style.display = 'none';
-//         }, 1500);
-//     }
-
-//     // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
-//     if(id === 'main-top-checkbox'){
-//         if(document.querySelector('#main-top-checkbox').checked){
-//             document.querySelectorAll('.main-ul-li-class input').forEach(item => {
-//                 item.checked = true;
-//             })
-//             document.querySelector('#main-top-left').classList.remove('main-top-left-before');
-//             document.querySelector('#main-top-left').classList.add('main-top-left-after');
-//             document.querySelector('#main-top-left-refresh').style.display = 'none';
-//             document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
-//         } else {
-//             document.querySelectorAll('.main-ul-li-class input').forEach(item => {
-//                 item.checked = false;
-//             })
-//             document.querySelector('#main-top-left').classList.add('main-top-left-before');
-//             document.querySelector('#main-top-left').classList.remove('main-top-left-after');
-//             document.querySelector('#main-top-left-refresh').style.display = 'block';
-//             document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
-//         }
-//     }
-
-//     // THIS SECTION IS FOR SELECTING INDIVIDUAL INPUT ELEMENTS IN THE EMAIL LIST
-//     if(document.getElementById(id).checked){
-//         // console.log('you checked single input inside list el')
-//         document.querySelector('#main-top-left').classList.remove('main-top-left-before');
-//         document.querySelector('#main-top-left').classList.add('main-top-left-after');
-//         document.querySelector('#main-top-left-refresh').style.display = 'none';
-//         document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
-//     } else {
-//         document.querySelector('#main-top-left').classList.add('main-top-left-before');
-//         document.querySelector('#main-top-left').classList.remove('main-top-left-after');
-//         document.querySelector('#main-top-left-refresh').style.display = 'block';
-//         document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
-//     }
-
-// })
