@@ -601,7 +601,7 @@ main {
 }
 
 .email-compose-screen {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 70px;
   width: 500px;
@@ -624,3 +624,105 @@ main {
 .email-compose-screen .new-message-details {
   padding: 10px 20px;
 }
+  
+   /* KARLYGACH'S PART */
+.new-message-recipients {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 5px;
+  color: #222;
+  border: none;
+
+}
+
+.new-message-subject {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 5px;
+  color: #222;
+  
+}
+
+
+.new-message-icons-block-one {
+  display: block;
+  margin-top: 100px;
+  padding: 5px 0 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #EEEFF2;
+  height: 50px;
+}
+
+#serif {
+  border-radius: 20px;
+  width: 100px;
+  cursor: pointer;
+  border: 2px solid lightgrey;
+  padding: 10px;
+  border-radius: 25px;
+  
+}
+
+.new-message-icons-block-two {
+  display: block;
+  height: 32px;
+  padding: 12px 0 16px;
+  cursor: pointer;
+}
+
+
+.new-message-btn {
+  padding: 10px 20px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+ 
+}
+
+#recipients-box  {
+  border: none;
+  background-color: transparent;
+  font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  /* position: relative; */
+  left: 20px; 
+  top: 2px;
+}
+
+#subject-box {
+  border: none;
+  background-color: transparent;
+  font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  /* position: absolute; */
+  left: 20px; 
+  top: 2px;
+}
+
+#new-message-bodybox {
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  height: 50px;
+  width: 120px;
+}
+
+#tree-dots {
+  margin-left: 50px;
+}
+ 
+option:nth-child(2) {
+  font-weight: bolder;
+}
+option:nth-child(3) {
+  font-style: italic;
+}
+ 
+
+.new-message-icons {
+  margin-right: 5px;
+  margin-left: 10px;
+  /* margin-bottom: 10px; */
+}
+

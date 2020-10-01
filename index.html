@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous" src=""></script>
     <title>GMAIL CLONE</title>
   </head>
   <body>
@@ -240,18 +240,68 @@
       <div class="email-compose-screen">
         <div class="new-message">
           <div>New message</div>
-          <div>some icons <i id="close-new-message-screen" class="fa fa-window-close"></i></div>
+          <div>
+            <i class="fas fa-window-minimize" aria-hidden="true"></i>
+            <i class="fas fa-expand-alt" aria-hidden="true"></i>
+            <i id="close-new-message-screen" class="fa fa-window-close" aria-hidden="true"></i>
+            
+          </div>
         </div>
+
         <div class="new-message-details">
-          <div>sending to who</div>
-          <div>email subject</div>
-          <div>email body</div>
-          <div>more icons</div>
-          <div><button>Send</button> button and other icons</div>
+          <div class="new-message-recipients">
+            <input placeholder="Recipients" id="recipients-box" name="recipients-box">
+          </div>
+          <div class="new-message-subject">
+            <input placeholder="Subject" id="subject-box" name="subject-box">
+             <!-- class="new-message-subject">Subject -->
+          </div>
+          
+          <div class="new-message-body">
+            <input id="new-message-bodybox" name="body-box">
+             <!-- class="new-message-subject">Subject -->
+          </div>
+
+          <div class="new-message-icons-block-one">
+            <i class="fas fa-undo new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-redo new-message-icons" aria-hidden="true"></i>
+            <select id="serif" name="serif">
+              <option value="sans-serif">Sans Serif</option>
+              <option value="wide"><strong>Wide</strong></option>
+              <option value="Italic"><em>Italic</em></option>
+            </select>
+            <i class="fas fa-text-height new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-bold new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-italic new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-underline new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-font new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-caret-down new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-align-right new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-list-ol new-message-icons" aria-hidden="true"></i>
+            
+
+          </div>
+
+          
+          <div class="new-message-icons-block-two">
+
+            <button class="new-message-btn">Send</button>
+            <i class="fas fa-underline new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-paperclip new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-link new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-italic new-message-icons" aria-hidden="true"></i>
+            <i class="far fa-laugh new-message-icons" aria-hidden="true"></i>
+            <i class="fab fa-google-drive new-message-icons" aria-hidden="true"></i>
+            <i class="far fa-image new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa user-clock new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-pen-alt new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-ellipsis-v new-message-icons" id="tree-dots" aria-hidden="true"></i>
+            <i class="fas fa-trash new-message-icons" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
 
     </div>
   </body>
-  <script type="text/javascript" src="../build/gmail.js"></script>
+  <script type="text/javascript" src="./build/gmail.js"></script>
 </html>
