@@ -46,7 +46,6 @@ function displayData(fetch_output){
         const classNames = event.target.getAttribute('class')
         // THIS SECTION IS FOR NAVBAR "Meet" and "Hangouts"
         if(id === 'btm-icon-user' || id === 'btm-icon-comment' || id === 'btm-icon-phone') {
-            // console.log ('youClicked bottom icons')
             document.querySelector('#meet-and-hangouts-container').classList.toggle('meet-and-hangouts-2');
         }
         
