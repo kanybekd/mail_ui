@@ -837,11 +837,12 @@ main {
 }
 
 #new-message-bodybox {
-  margin: 10px 0 0 0;
+  margin: 10px;
   border: none;
   background-color: transparent;
-  height: 50px;
-  width: 100%;
+  min-height: 50px;
+  width: 400px;
+  white-space: wrap;
   outline: none;
   padding: 0 10px 0 10px;
 }
