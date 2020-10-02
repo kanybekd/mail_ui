@@ -264,8 +264,8 @@
              <!-- class="new-message-subject">Subject -->
           </div>
           
-          <div class="new-message-body">
-            <input id="new-message-bodybox" name="body-box">
+          <div id='new-message-body-id' class="new-message-body">
+            <!-- <input id="new-message-bodybox" name="body-box"> -->
              <!-- class="new-message-subject">Subject -->
           </div>
 
@@ -274,13 +274,13 @@
             <i class="fas fa-redo new-message-icons" aria-hidden="true"></i>
             <select id="serif" name="serif">
               <option value="sans-serif">Sans Serif</option>
-              <option value="wide"><strong>Wide</strong></option>
-              <option value="Italic"><em>Italic</em></option>
+              <option value="Comic-sans-MS" type="button" onclick="formatComicSansMS()">Comic Sans MS</option>
+              <option value="Italic">Narrow</option>
             </select>
             <i class="fas fa-text-height new-message-icons" aria-hidden="true"></i>
-            <i class="fas fa-bold new-message-icons" aria-hidden="true"></i>
-            <i class="fas fa-italic new-message-icons" aria-hidden="true"></i>
-            <i class="fas fa-underline new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatBold()" class="fas fa-bold new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatItalic()" class="fas fa-italic new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatUnderline()"class="fas fa-underline new-message-icons" aria-hidden="true"></i>
             <i class="fas fa-font new-message-icons" aria-hidden="true"></i>
             <i class="fas fa-caret-down new-message-icons" aria-hidden="true"></i>
             <i class="fas fa-align-right new-message-icons" aria-hidden="true"></i>

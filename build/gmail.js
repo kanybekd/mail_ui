@@ -114,9 +114,11 @@ document.body.addEventListener('click', function(event){
     }
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
+   
     if(id === 'compose-plus-icon' || id === 'compose-text'){
         document.querySelector('.email-compose-screen').style.display = 'block'
-    }
+        forEditingCompose()
+      }
     if(id === 'close-new-message-screen'){
         document.querySelector('.email-compose-screen').style.display = 'none'
     }
@@ -293,6 +295,31 @@ function displayEmailsBasedOnTheCategory(email_category_dataset){
     })
     displayData(email_category_dataset);
 }
+function forEditingCompose(){
+  document.querySelector('#new-message-body-id').contentEditable=true;
+  
+}
+// KARLYGACH
+
+// function formatComicSansMS(){
+//   document.getElementById("#serif").style.fontWeight = "comic sans ms ,sans-serif ";
+
+//   // font-family: "comic sans ms", sans-serif;
+// }
+
+function formatBold(){
+  // document.execCommand(command,false,value);
+  document.getElementById("new-message-body-id").style.fontWeight = "bold";
+
+}
+
+function formatItalic(){
+  document.getElementById("new-message-body-id").style.fontStyle = "italic";
+}
+
+function formatUnderline(){
+  document.getElementById("new-message-body-id").style.textDecoration = "underline";
+}
 
 function clickingIEachCheckbox(){
     let arr = [...document.querySelectorAll('#child2')];
@@ -381,3 +408,4 @@ function createElements(data_key, dataSet){
 
     email_ul_list.appendChild(email_ul_li_list)
 }
+
