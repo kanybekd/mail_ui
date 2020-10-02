@@ -70,16 +70,17 @@
         <!-- KARLYGACH'S PART ENDS HERE -->
 
         <!-- KUMAR'S PART STARTS HERE -->
-        <div class="meet">
-          <i class="fa fa-ellipsis-h" style="font-size:24px;"></i>
+       <div id="meet-and-hangouts-container" class="meet-and-hangouts">
+          <div class="meet">
+            <i class="fa fa-grip-lines" style="font-size:24px;"></i>
           <p>Meet</p>
           <div class="left-tag left-tag-start">
-            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png" />
-            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting</span>
+            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png"/>
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting<span class=tooltiptext>Start a meeting</span></span>
           </div>
           <div class="left-tag left-tag-join">
             <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/meeting-icon.png" />
-            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting</span>
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting<span class="tooltiptext">Join a meeting</span></span>
           </div>
         </div>
       
@@ -90,7 +91,7 @@
             <span>Peter</span>
             <img class="hangouts-plus" src="./images/plus-icon.png" />
           </div>
-          <hr />
+          
 
           <!-- OTHER USERS FROM CONTACTS -->
           <div class="hangout-user users">
@@ -101,6 +102,19 @@
             </div>
           </div>
         </div>
+       </div>
+
+        <div class="bottom-icons">
+            <i id="btm-icon-user" class="hangout-icons fa fa-user"><span class="tooltiptext">Hangouts contacts</span></i>
+            
+            <i id="btm-icon-comment" class="hangout-icons fa fa-comment-dots"><span class="tooltiptext">Hangouts conversations</span></i>
+            
+            <i id="btm-icon-phone" class="hangout-icons fa fa-phone-alt"><span class="tooltiptext">Phone calls</span></i>
+            <!-- <span class="tooltiptext">Phone calls</span> -->
+        </div>
+           
+        
+        
         <!-- KUMAR'S PART ENDS HERE -->
       </aside>
       <main>
