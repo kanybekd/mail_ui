@@ -55,7 +55,7 @@ function displayDataStarred(email_category_dataset_starred){
   }
 }
 
-displayData(primaryEmails);
+// displayData(primaryEmails);
 displayDataStarred(primaryEmails);
 
 document.body.addEventListener('click', function(event){
@@ -68,34 +68,42 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
+      removeActiveBotRedFromEachCategory(primaryEmails);
       removeAllEmailsFromEmailList();
       displayData(primaryEmails);
-      removeActiveBotRedFromEachCategory(primaryEmails);
+      undisplayMainTopLeft();
     }
 
     // THIS SECTION IS FOR SOCIAL CATEGORY EMAILS
     if(id === 'social'){
+      removeActiveBotRedFromEachCategory(socialEmails)
       removeAllEmailsFromEmailList();
       displayData(socialEmails);
-      removeActiveBotRedFromEachCategory(socialEmails)
+      undisplayMainTopLeft();
     }
 
     // THIS SECTION IS FOR PROMOTIONS CATEGORY EMAILS
     if(id === 'promotions'){
+      removeActiveBotRedFromEachCategory(promotionsEmails);
       removeAllEmailsFromEmailList();
       displayData(promotionsEmails);
-      removeActiveBotRedFromEachCategory(promotionsEmails);
+      undisplayMainTopLeft();
     }
 
     // THIS SECTION IS FOR SELECING INDIVIDUAL EMAILS IN THE EMAIL-LIST AND TRASHING THEM
     if(id === 'trash-email'){
-        document.querySelectorAll('#email-ul-list .ul-li-list input').forEach(item => {
-            if(item.checked){
-                item.parentElement.remove();
-                document.querySelector('#trash-counter').innerText++;
-                primaryEmails[item.parentElement.getAttribute('id')].tags.isTrash = true;
-            }
-        })
+      if(xFun() === 'primary'){
+        undisplayMainTopLeft();
+        trashAllEmailsFromSpecificCategory(primaryEmails);
+      }
+      if(xFun() === 'social'){
+        undisplayMainTopLeft();
+        trashAllEmailsFromSpecificCategory(socialEmails);
+      }
+      if(xFun() === 'promotions'){
+        undisplayMainTopLeft();
+        trashAllEmailsFromSpecificCategory(promotionsEmails);
+      }
     }
 
     // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR INBOX ICON AND DISPLAYING ALL EMAILS
@@ -210,21 +218,27 @@ document.body.addEventListener('click', function(event){
     if(id === 'search-icon'){
       if(document.querySelector('#search-input').value !== ""){
         removeAllEmailsFromEmailList();
-        searchEachCategoryAndPresentData(primaryEmails);
-        searchEachCategoryAndPresentData(socialEmails);
-        searchEachCategoryAndPresentData(promotionsEmails);
+        if(xFun() === 'primary'){
+          searchEachCategoryAndPresentData(primaryEmails);
+        }
+        if(xFun() === 'social'){
+          searchEachCategoryAndPresentData(socialEmails);
+        }
+        if(xFun() === 'promotions'){
+          searchEachCategoryAndPresentData(promotionsEmails);
+        }
         if(!document.querySelectorAll('.ul-li-list').length){
           document.querySelector('#unfound-error-message').innerText = `SORRY, WE COULDN\'T FIND ANYTHING RELATED TO "${document.querySelector('#search-input').value}"`
           setTimeout(function(){
             document.querySelector('#unfound-error-message').innerText = "";
-          }, 2000)
+          }, 3000)
         }
       } else {
         removeAllEmailsFromEmailList();
         document.querySelector('#unfound-error-message').innerText = 'Enter valid text to search';
         setTimeout(function(){
           document.querySelector('#unfound-error-message').innerText = '';
-        }, 2000)
+        }, 3000)
       }
     }
 
@@ -260,6 +274,16 @@ function formatItalic(){
 
 function formatUnderline(){
   document.getElementById("new-message-body-id").style.textDecoration = "underline";
+}
+
+function trashAllEmailsFromSpecificCategory(email_category_dataset){
+  document.querySelectorAll('#email-ul-list .ul-li-list input').forEach(item => {
+    if(item.checked){
+        item.parentElement.remove();
+        document.querySelector('#trash-counter').innerText++;
+        email_category_dataset[item.parentElement.getAttribute('id')].tags.isTrash = true;
+    }
+  })
 }
 
 function xFun(){

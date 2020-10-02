@@ -758,8 +758,17 @@ main {
   border-left: 1px solid rgb(238, 236, 236);
 }
 
-.aside-right i {
+.aside-right a {
   margin: 20px 0;
+}
+
+.aside-right a img {
+  width: 28px;
+  height: 28px;
+}
+
+.aside-right a img#extend {
+  border-radius: 25px;
 }
 
 .email-compose-screen {
