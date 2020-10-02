@@ -60,7 +60,9 @@ displayDataStarred(primaryEmails);
 
 document.body.addEventListener('click', function(event){
     const id = event.target.getAttribute('id');
-
+    if(id === 'btm-icon-user' || id === 'btm-icon-comment' || id === 'btm-icon-phone') {
+        document.querySelector("#meet-and-hangouts-container").classList.toggle('meet-and-hangouts-2')
+    }
     // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
       removeAllEmailsFromEmailList();
