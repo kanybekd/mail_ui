@@ -36,15 +36,15 @@ fetch(urlPromotions)
 
 function displayData(email_category_dataset){
   keyArray = [];
-    for(let key in email_category_dataset){
-        if(!email_category_dataset[key].tags.isTrash){
-            if(!keyArray.includes(Number(key))){
-              keyArray.push(Number(key));
-              createElements(key, email_category_dataset);
-            }
-        }
-    }
-    displayDataStarred(email_category_dataset);
+  for(let key in email_category_dataset){
+      if(!email_category_dataset[key].tags.isTrash){
+          if(!keyArray.includes(Number(key))){
+            keyArray.push(Number(key));
+            createElements(key, email_category_dataset);
+          }
+      }
+  }
+  displayDataStarred(email_category_dataset);
 }
 
 function displayDataStarred(email_category_dataset_starred){
@@ -114,9 +114,10 @@ document.body.addEventListener('click', function(event){
     }
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
-    if(id === 'compose-plus-icon' || id === 'compose-text'){
+    if(id === 'compose-plus-icon' || id === 'compose-text' || id === 'compose-wrapper'){
         document.querySelector('.email-compose-screen').style.display = 'block'
-    }
+        forEditingCompose()
+      }
     if(id === 'close-new-message-screen'){
         document.querySelector('.email-compose-screen').style.display = 'none'
     }
@@ -211,6 +212,12 @@ document.body.addEventListener('click', function(event){
             document.querySelector('#unfound-error-message').innerText = "";
           }, 2000)
         }
+      } else {
+        removeAllEmailsFromEmailList();
+        document.querySelector('#unfound-error-message').innerText = 'Enter valid text to search';
+        setTimeout(function(){
+          document.querySelector('#unfound-error-message').innerText = '';
+        }, 2000)
       }
     }
 
@@ -293,6 +300,31 @@ function displayEmailsBasedOnTheCategory(email_category_dataset){
     })
     displayData(email_category_dataset);
 }
+function forEditingCompose(){
+  document.querySelector('#new-message-body-id').contentEditable=true;
+  
+}
+// KARLYGACH
+
+// function formatComicSansMS(){
+//   document.getElementById("#serif").style.fontWeight = "comic sans ms ,sans-serif ";
+
+//   // font-family: "comic sans ms", sans-serif;
+// }
+
+function formatBold(){
+  // document.execCommand(command,false,value);
+  document.getElementById("new-message-body-id").style.fontWeight = "bold";
+
+}
+
+function formatItalic(){
+  document.getElementById("new-message-body-id").style.fontStyle = "italic";
+}
+
+function formatUnderline(){
+  document.getElementById("new-message-body-id").style.textDecoration = "underline";
+}
 
 function clickingIEachCheckbox(){
     let arr = [...document.querySelectorAll('#child2')];
@@ -316,6 +348,7 @@ function clickingIEachListsAndDisplayingEmailContent(li_id, email_category_datas
     if(key === li_id){
       document.querySelector('.email-content-title').innerHTML = email_category_dataset[key].messageTitle
       document.querySelector('.email-content-middle-sender-info').innerHTML = email_category_dataset[key].senderName + ' ' + email_category_dataset[key].senderEmail
+      document.querySelector('.email-content-time').innerHTML = email_category_dataset[key].date.slice(11, 19) + ' PM';
       document.querySelector('.email-content-bottom').innerHTML = email_category_dataset[key].messages[0].message
     }
   }
@@ -366,8 +399,8 @@ function createElements(data_key, dataSet){
     email_list_child6.setAttribute('id', 'child6');
     email_list_child7.setAttribute('id', 'child7');
 
-    email_list_child4.innerText = dataSet[data_key].senderEmail;
-    email_list_child5.innerText = dataSet[data_key].messageTitle;
+    email_list_child4.innerText = dataSet[data_key].senderName;
+    email_list_child5.innerText = dataSet[data_key].messageTitle + ' - ' + dataSet[data_key].messages[0].message;
     email_list_child6.innerText = dataSet[data_key].date.slice(11, 19) + ' PM';
     email_list_child7.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
 
@@ -381,3 +414,4 @@ function createElements(data_key, dataSet){
 
     email_ul_list.appendChild(email_ul_li_list)
 }
+
