@@ -47,6 +47,7 @@ function displayData(fetch_output){
         // THIS SECTION IS FOR NAVBAR "Meet" and "Hangouts"
         if(id === 'btm-icon-user' || id === 'btm-icon-comment' || id === 'btm-icon-phone') {
             document.querySelector('#meet-and-hangouts-container').classList.toggle('meet-and-hangouts-2');
+            
         }
         
 
