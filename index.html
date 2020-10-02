@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
     <title>GMAIL CLONE</title>
   </head>
   <body>
+    <!-- KANYBEK'S PART START HERE -->
     <header>
       <div class="left">
         <div><img class="header-icon" src="images/burger-menu.png" /></div>
@@ -15,97 +19,284 @@
       </div>
 
       <div class="middle">
-        <input id="search" type="text" placeholder="Search mail" />
+        <input id="search-input" type="text" placeholder="Search mail" />
+        <i id="search-icon" class="fa fa-search"></i>
+        <div id="unfound-error-message"></div>
       </div>
 
       <div class="right">
-        <img class="header-icon" src="images/question-icon.png" />
+        <img id ='question' class="header-icon" src="images/question-icon.png" />
         <img class="header-icon" src="images/settings-icon.png" />
-        <img class="header-icon" src="images/apps-icon.png" />
+        <img id ='app_menu'  class="header-icon" src="images/apps-icon.png" />
         <img class="header-icon lg" src="images/user-icon.png" />
       </div>
+      <div class="grid-container">
+
+      <div class="grid-item" id='youtube'><img id='youid' class ='im' src="images/youtube-icon.png" alt=""><span id='span'>Youtube</span></div>
+      <div class="grid-item" id='search'><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      </div>
+      <div class="help_wrapper">
+          <div class="items_help">Help</div>
+          <div class="items_help">Training</div>
+          <div class="items_help">Updates</div>
+          <div class="items_help" id='bottom-list'>Send Feedback</div>
+        </div>
+
     </header>
-    <aside class="sidebar">
-      <div class="compose"><img src="./images/plus-icon.png" />Compose</div>
+    <!-- KANYBEK'S PART ENDS HERE -->
 
-      <div class="menu">
-        <div class="inbox left-tag">
-          <img src="./images/inbox-icon.png" />
-          <span>Inbox</span>
-        </div>
-        <div class="starred left-tag">
-          <img src="./images/star-icon.png" />
-          <span>Starred</span>
-        </div>
-        <div class="trash left-tag">
-          <img src="./images/trash-icon.png" />
-          <span>Trash</span>
-        </div>
-        <div class="spam left-tag">
-          <img src="images/spam-icon.png" />
-          <span>Spam</span>
-        </div>
-      </div>
+    <div class="flex-wrapper">
+      <aside class="sidebar">
 
-      <div class="meet">
-        <p>Meet</p>
-        <div class="left-tag">
-          <img src="./images/video-icon.png" />
-          <span>Start a meeting</span>
+        <!-- KARLYGACH'S PART START HERE -->
+        <div id="compose-wrapper" class="compose">
+          <img id="compose-plus-icon" src="./images/gm-plus-icon.png" alt="gmail compose plus icon"><span id="compose-text">Compose</span>
         </div>
-        <div class="left-tag">
-          <img src="./images/meeting-icon.png" />
-          <span>Join a meeting</span>
-        </div>
-      </div>
 
-      <div class="hangouts">
-        <p>Hangouts</p>
-        <div class="hangout-user">
-          <div>
+        <div class="menu">
+          <div class="inbox left-tag">
+            <img id="sidebar-inbox-icon" src="./images/inbox-icon.png" />
+            <span>Inbox</span>
+            <span id="inbox-counter" style="color: red;"></span>
+          </div>
+          <div class="starred left-tag">
+            <img id="sidebar-starred-icon" src="./images/star-icon.png" />
+            <span>Starred</span>
+            <span id="starred-counter" style="color: red;"></span>
+          </div>
+          <div class="trash left-tag">
+            <img id="sidebar-trash-icon" src="./images/trash-icon.png" />
+            <span>Trash</span>
+            <span id="trash-counter" style="color: red;">0</span>
+          </div>
+          <div class="spam left-tag">
+            <img id="sidebar-spam-icon" src="images/spam-icon.png" />
+            <span>Spam</span>
+            <span id="spam-counter" style="color: red;"></span>
+          </div>
+          <div class="draft left-tag">
+            <img id="sidebar-draft-icon" src="./images/drafts.png" />
+            <span>Drafts</span>
+            <span id="draft-counter" style="color: red;"></span>
+          </div>
+        </div>
+        <!-- KARLYGACH'S PART ENDS HERE -->
+
+        <!-- KUMAR'S PART STARTS HERE -->
+        <div class="meet">
+          <i class="fa fa-ellipsis-h" style="font-size:24px;"></i>
+          <p>Meet</p>
+          <div class="left-tag left-tag-start">
+            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png" />
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting</span>
+          </div>
+          <div class="left-tag left-tag-join">
+            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/meeting-icon.png" />
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting</span>
+          </div>
+        </div>
+
+        <div class="hangouts">
+          <p>Hangouts</p>
+          <div class="hangout-user">
             <img src="./images/user-icon.png" />
             <span>Peter</span>
+            <img class="hangouts-plus" src="./images/plus-icon.png" />
           </div>
+          <hr />
+
+          <!-- OTHER USERS FROM CONTACTS -->
+          <div class="hangout-user users">
+            <div class="users-info">
+              <img src="./images/user-icon.png" />
+              <span>Nancy</span>
+              <img class="hangouts-bars" src="./images/bars-icon.png" />
+            </div>
+          </div>
+        </div>
+        <!-- KUMAR'S PART ENDS HERE -->
+      </aside>
+      <main>
+        <!-- KANYBEK'S PART STARTS HERE -->
+        <section class="main-top">
           <div>
-            <img src="./images/plus-icon.png" />
+            <div id="main-top-left" class="main-top-left-before">
+              <div class="main-top-left-checkbox-down">
+                <input type="checkbox" id="main-top-checkbox">
+                <i id="main-top-left-fa-arrow-down" class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+              <div class="email-content-back-button">
+                <i id="email-content-back-button" class="fa fa-arrow-left"></i>
+              </div>
+              <i id="main-top-left-refresh" class="fa fa-redo" aria-hidden="true"></i>
+              <div class="main-top-checkbox-checked-div">
+                <div class="main-top-checkbox-checked-display">
+                  <img id="archive-email" src="./images/archive.png" alt="">
+                  <img id="spam-email" src="./images/spam-icon2.png" alt="">
+                  <img id="trash-email" src="./images/trash-icon.png" alt="">
+                  <img id="mark-as-read-email" src="./images/mark_as_unread.png" alt="">
+                  <img id="snooze-email" src="./images/snooze-icon.png" alt="">
+                  <img id="add-to-tasks-email" src="./images/add-to-tasks-icon.jpg" alt="">
+                  <img id="move-to-email" src="./images/move-to-icon.jpg" alt="">
+                  <img id="labels-email" src="./images/labels-icon.jpg" alt="">
+                </div>
+              </div>
+              <i id="main-top-left-three-dots" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <div class="main-top-left-displays main-top-left-checkbox-display">
+                <ul>
+                  <li>All</li>
+                  <li>None</li>
+                  <li>Read</li>
+                  <li>Unread</li>
+                  <li>Starred</li>
+                  <li>Unstarred</li>
+                </ul>
+              </div>
+              <div class="main-top-left-displays main-top-left-three-dots-display">
+                <span>Mark all as read</span>
+                <hr>
+                <p>Select messages to see more acions</p>
+              </div>
+            </div>
+          </div>
+          <div class="main-top-middle">
+            <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
+          </div>
+          <div class="main-top-right">
+            <p class="pagination"><span id="num-of-start-email">1</span> - <span id="num-of-end-email">20</span> of <span id="num-of-total-emails">50</span></p>
+            <i id="pagination-left-arrow" class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i id="pagination-right-arrow" class="fa fa-arrow-right" aria-hidden="true"></i>
+            <div class="main-top-right-keyboard">
+              <i class="fa fa-keyboard" aria-hidden="true"></i>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <div class="keyboard-options">
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- KANYBEK'S PART ENDS HERE -->
+
+        <!-- ULANBEK'S PART STARTS HERE -->
+        <div class="email-body">
+          <section id="type-bar">
+              <ul id="nav-ul-el">
+                <li class="nav-list active-bot-red" id="primary"><i class="fa fa-inbox"></i>Primary</li>
+                <li class="nav-list" id="social"><i class="fa fa-users"></i>Social</li>
+                <li class="nav-list" id="promotions"><i class="fa fa-tag"></i>Promotions</li>
+              </ul>
+          </section>
+          <!-- ULANBEK'S PART ENDS HERE -->
+
+          <!-- AZAMAT'S PART STARTS HERE -->
+          <section class="email-list">
+            <ul id='email-ul-list'>
+              <!-- <li class="ul-li-list" id='0'>
+                  <i id="child1" class="common first-last fa fa-ellipsis-v"></i>
+                  <input id="child2" class="common" type="checkbox">
+                  <i id="child3" class="common fa fa-star"></i>
+                  <div id="child4" class="common">Sender Email</div>
+                  <div id="child5" class="common">Email Message</div>
+                  <div id="child6" class="common">Time</div>
+                  <div id="child7" class="common first-last">
+                      <img src="./images/archive.png" alt="">
+                      <img src="./images/trash-icon.png" alt="">
+                      <img src="./images/mark_as_unread.png" alt="">
+                      <img src="./images/snooze-icon.png" alt="">
+                  </div>
+              </li> -->
+            </ul>
+          </section>
+        </div>
+        <!-- AZAMAT'S PART ENDS HERE -->
+
+        <div class="email-content">
+
+          <div class="email-content-top">
+              <div class="email-content-title"></div>
+              <div class="print-and-new-window">
+                  <i class="fa fa-print"></i>
+                  <i class="fa fa-arrow-circle-right"></i>
+              </div>
+          </div>
+
+          <div class="email-content-middle">
+            <div class="email-content-middle-sender-info"></div>
+            <div class="time-and-add-icons">
+                <div class="email-content-time">Time</div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-reply"></i>
+                <i class="fa fa-ellipsis-v"></i>
+            </div>
+          </div>
+
+          <div class="email-content-bottom"></div>
+
+          <div class="reply-forward">
+              <div class="reply-forward-common">
+                  <i id="reply-forward-reply-icon" class="fa fa-reply"></i>
+                  <span>Reply</span>
+              </div>
+              <div class="reply-forward-common">
+                  <i id="reply-forward-forward-icon" class="fa fa-arrow-right"></i>
+                  <span>Forward</span>
+              </div>
           </div>
         </div>
-        <hr style="width: 90%" />
-        <div class="hangout-user users">
-          <div style="flex: 1">
-            <img src="./images/user-icon.png" />
-          </div>
-          <div style="flex: 4">
-            <p style="margin: 0">Peter</p>
-            <p style="margin: 0">Invitation sent</p>
-          </div>
+      </main>
+      <!-- RUSTAM'S PART STARTS HERE -->
+      <aside class="aside-right">
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+      </aside>
+      <div hidden>
+
+      </div>
+      <!-- RUSTAM'S PART ENDS HERE -->
+
+
+      <!-- THIS SECTION WILL DISPLAY A COMPOSE AN EMAIL SCREEN  -->
+      <div class="email-compose-screen">
+        <div class="new-message">
+          <div>New message</div>
+          <div>some icons <i id="close-new-message-screen" class="fa fa-window-close"></i></div>
         </div>
-        <div class="hangout-user users">
-          <div style="flex: 1">
-            <img src="./images/user-icon.png" />
-          </div>
-          <div style="flex: 4">
-            <p style="margin: 0">Nancy</p>
-            <p style="margin: 0">Thank you!</p>
-          </div>
+        <div class="new-message-details">
+          <div>sending to who</div>
+          <div>email subject</div>
+          <div>email body</div>
+          <div>more icons</div>
+          <div><button>Send</button> button and other icons</div>
         </div>
       </div>
-    </aside>
-    <main>
-      <section>
-        <div>checkbox</div>
-        <div>pagination</div>
-      </section>
-      <section>
-        <div>Primary</div>
-        <div>Social</div>
-        <div>Promotions</div>
-        <div>Updates</div>
-      </section>
-      <section>
-        <div>Messages...</div>
-      </section>
-    </main>
+    </div>
   </body>
-  <script type="text/javascript" src="../build/index.js"></script>
+  <script type="text/javascript" src="./build/gmail.js"></script>
 </html>
