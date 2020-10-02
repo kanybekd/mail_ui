@@ -647,3 +647,46 @@ main {
 .email-compose-screen .new-message-details {
   padding: 10px 20px;
 }
+div.main-top-right-keyboard{
+  position: relative;
+} 
+div.keyboard-options{
+  display: none;
+  position: absolute;
+  top:16px;
+  right: 0px;
+  z-index: 2;
+}
+
+.keyboard-options ul {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  border: 1px solid #F5F7F7;
+  margin: 0;
+  padding: 0;
+  background-color:#FFFFFF;
+}
+.keyboard-options ul li{
+  font-size: 12px;
+  color:black;
+  list-style: none;
+  padding: 5px 20px;
+}
+.keyboard-options ul li:hover{
+  color: #333333;
+  background-color: #F5F7F7;
+}
+.keyboard-options ul li i {
+  padding: 5px;
+}
+.keyboard-options ul li span {
+  padding: 5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+.keyboard-options span hr {
+  color: #F5F7F7;
+}
+
+
+

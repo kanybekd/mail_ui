@@ -229,6 +229,15 @@ document.body.addEventListener('click', function(event){
     if(id === 'pagination-right-arrow'){
       console.log('pagination-right-arrow')
     }
+    //THIS SECTION IS FOR KEYBOARD
+if(id==='keyboard-btn'){
+  if(document.querySelector('div.keyboard-options').style.display === 'none'){
+    document.querySelector('div.keyboard-options').style.display = 'block';
+  }
+  else {
+    document.querySelector('div.keyboard-options').style.display = 'none'
+  }
+}
 })
 
 
