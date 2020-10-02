@@ -24,10 +24,46 @@
       </div>
 
       <div class="right">
-        <img class="header-icon" src="images/question-icon.png" />
+        <img id ='question' class="header-icon" src="images/question-icon.png" />
         <img class="header-icon" src="images/settings-icon.png" />
-        <img class="header-icon" src="images/apps-icon.png" />
+        <img id ='app_menu' class="header-icon" src="images/apps-icon.png" />
         <img class="header-icon lg" src="images/user-icon.png" />
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item" id='youtube'><img id='youid' class ='im' src="images/youtube-icon.png" alt=""><span id='span'>Youtube</span></div>
+        <div class="grid-item" id='search'><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+        <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+        <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+        <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+        <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+        <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+        <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+        <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+        <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+        <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+        <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+        <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+        <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+        <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+        <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+        <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+        <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+        <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+        <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+        <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+        <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+        <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+        <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+        <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+        <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+        <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      </div>
+      <div class="help_wrapper">
+        <div class="items_help">Help</div>
+        <div class="items_help">Training</div>
+        <div class="items_help">Updates</div>
+        <div class="items_help" id='bottom-list'>Send Feedback</div>
       </div>
     </header>
     <!-- KANYBEK'S PART ENDS HERE -->
@@ -70,37 +106,43 @@
         <!-- KARLYGACH'S PART ENDS HERE -->
 
         <!-- KUMAR'S PART STARTS HERE -->
-        <div class="meet">
-          <i class="fa fa-ellipsis-h" style="font-size:24px;"></i>
-          <p>Meet</p>
-          <div class="left-tag left-tag-start">
-            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png" />
-            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting</span>
+        <div id="meet-and-hangouts-container" class="meet-and-hangouts">
+          <div class="meet">
+            <i class="fa fa-ellipsis-h" style="font-size:24px;"></i>
+            <p>Meet</p>
+            <div class="left-tag left-tag-start">
+              <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png"/>
+              <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting<span class="tooltiptext">Start a meeting</span></span>
+            </div>
+            <div class="left-tag left-tag-join">
+              <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/meeting-icon.png" />
+              <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting<span class="tooltiptext">Join a meeting</span></span>
+            </div>
           </div>
-          <div class="left-tag left-tag-join">
-            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/meeting-icon.png" />
-            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting</span>
-          </div>
-        </div>
-      
-        <div class="hangouts">
-          <p>Hangouts</p>
-          <div class="hangout-user">
-            <img src="./images/user-icon.png" />
-            <span>Peter</span>
-            <img class="hangouts-plus" src="./images/plus-icon.png" />
-          </div>
-          <hr />
-
-          <!-- OTHER USERS FROM CONTACTS -->
-          <div class="hangout-user users">
-            <div class="users-info">
+          
+          <div class="hangouts">
+            <p>Hangouts</p>
+            <div class="hangout-user">
               <img src="./images/user-icon.png" />
-              <span>Nancy</span>
-              <img class="hangouts-bars" src="./images/bars-icon.png" />
+              <span>Peter</span>
+              <img class="hangouts-plus" src="./images/plus-icon.png" />
+            </div>
+          
+            <!-- OTHER USERS FROM CONTACTS -->
+            <div class="hangout-user users">
+              <div class="users-info">
+                <img src="./images/user-icon.png" />
+                <span>Nancy</span>
+                <img class="hangouts-bars" src="./images/bars-icon.png" />
+              </div>
             </div>
           </div>
         </div>
+        <div class="bottom-icons">
+          <i id="btm-icon-user" class="hangout-icons fa fa-user"><span class="tooltiptext">Hangouts contacts</span></i>
+          <i id="btm-icon-comment" class="hangout-icons fa fa-comment-dots"><span class="tooltiptext">Hangouts conversations</span></i>
+          <i id="btm-icon-phone" class="hangout-icons fa fa-phone-alt"><span class="tooltiptext">Phone calls</span></i>
+      </div>
         <!-- KUMAR'S PART ENDS HERE -->
       </aside>
       <main>
@@ -155,9 +197,16 @@
             <i id="pagination-right-arrow" class="fa fa-arrow-right" aria-hidden="true"></i>
             <div class="main-top-right-keyboard">
               <i class="fa fa-keyboard" aria-hidden="true"></i>
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <i id="keyboard-btn" class="fa fa-angle-down" aria-hidden="true"></i>
               <div class="keyboard-options">
-                
+                <ul id="keyboard">
+                  <li><i class="fa fa-keyboard"></i>English</li>
+                  <li><i class="fa fa-keyboard"></i>English Dvorak</li>
+                  <li><span id="en">En</span> English</li>
+                  <li><i class="fas fa-pen"></i>English</li>
+                  <li><hr></li>
+                  <li>Input Tools Settings</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -243,22 +292,63 @@
       </div>
       <!-- RUSTAM'S PART ENDS HERE -->
 
-
       <!-- THIS SECTION WILL DISPLAY A COMPOSE AN EMAIL SCREEN  -->
       <div class="email-compose-screen">
         <div class="new-message">
           <div>New message</div>
-          <div>some icons <i id="close-new-message-screen" class="fa fa-window-close"></i></div>
+          <div>
+            <i class="fas fa-window-minimize" aria-hidden="true"></i>
+            <i class="fas fa-expand-alt" aria-hidden="true"></i>
+            <i id="close-new-message-screen" class="fa fa-window-close" aria-hidden="true"></i>
+          </div>
         </div>
         <div class="new-message-details">
-          <div>sending to who</div>
-          <div>email subject</div>
-          <div>email body</div>
-          <div>more icons</div>
-          <div><button>Send</button> button and other icons</div>
+          <div class="new-message-recipients">
+            <input placeholder="Recipients" id="recipients-box" name="recipients-box">
+          </div>
+          <div class="new-message-subject">
+            <input placeholder="Subject" id="subject-box" name="subject-box">
+          </div>
+
+          <div class="new-message-body"> 
+            <p contenteditable="true" id="new-message-bodybox"></p>
+            <!-- <input id="new-message-bodybox" name="body-box"> -->
+          </div>
+
+          <div class="new-message-icons-block-one">
+            <i class="fas fa-undo new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-redo new-message-icons" aria-hidden="true"></i>
+            <select id="serif" name="serif">
+              <option value="sans-serif">Sans Serif</option>
+              <option value="Comic-sans-MS" type="button" onclick="formatComicSansMS()">Comic Sans MS</option>
+              <option value="Italic">Narrow</option>
+            </select>
+            <i class="fas fa-text-height new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatBold()" class="fas fa-bold new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatItalic()" class="fas fa-italic new-message-icons" aria-hidden="true"></i>
+            <i type="button" onclick="formatUnderline()"class="fas fa-underline new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-font new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-caret-down new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-align-right new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-list-ol new-message-icons" aria-hidden="true"></i>
+          </div>
+          <div class="new-message-icons-block-two">
+            <button class="new-message-btn">Send</button>
+            <i class="fas fa-underline new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-paperclip new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-link new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-italic new-message-icons" aria-hidden="true"></i>
+            <i class="far fa-laugh new-message-icons" aria-hidden="true"></i>
+            <i class="fab fa-google-drive new-message-icons" aria-hidden="true"></i>
+            <i class="far fa-image new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa user-clock new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-pen-alt new-message-icons" aria-hidden="true"></i>
+            <i class="fas fa-ellipsis-v new-message-icons" id="tree-dots" aria-hidden="true"></i>
+            <i class="fas fa-trash new-message-icons" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="../build/gmail.js"></script>
+  <script type="text/javascript" src="./build/gmail.js"></script>
 </html>

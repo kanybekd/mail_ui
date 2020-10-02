@@ -61,6 +61,11 @@ displayDataStarred(primaryEmails);
 document.body.addEventListener('click', function(event){
     const id = event.target.getAttribute('id');
 
+    // THIS SECTION IS FOR CLICKING SIDE-BAR BOTTOM ICONS
+    if(id === 'btm-icon-user' || id === 'btm-icon-comment' || id === 'btm-icon-phone') {
+      document.querySelector("#meet-and-hangouts-container").classList.toggle('meet-and-hangouts-2')
+    }
+
     // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
       removeAllEmailsFromEmailList();
@@ -115,7 +120,8 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
     if(id === 'compose-plus-icon' || id === 'compose-text' || id === 'compose-wrapper'){
-        document.querySelector('.email-compose-screen').style.display = 'block'
+        document.querySelector('.email-compose-screen').style.display = 'block';
+        forEditingCompose();
     }
     if(id === 'close-new-message-screen'){
         document.querySelector('.email-compose-screen').style.display = 'none'
@@ -123,7 +129,9 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR DISPLAYING OPTIONS FOR MAIN-TOP-LEFT-ARROW-DOWN ICON
     if(id === 'main-top-left-fa-arrow-down'){
-        document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
+        document.querySelector('.main-top-left-checkbox-display').style.display = 'block';
+    } else {
+      document.querySelector('.main-top-left-checkbox-display').style.display = 'none';
     }
 
     // THIS SECTION IS FOR REFRESHING EMAIL-LIST SCREEN AND FETCH IF THERE IS ANY NEW EMAILS
@@ -229,8 +237,30 @@ document.body.addEventListener('click', function(event){
     if(id === 'pagination-right-arrow'){
       console.log('pagination-right-arrow')
     }
+
+    //THIS SECTION IS FOR KEYBOARD
+    if(id === 'keyboard-btn'){
+        document.querySelector('div.keyboard-options').style.display = 'block';
+    } else {
+        document.querySelector('div.keyboard-options').style.display = 'none';
+    }
 })
 
+function forEditingCompose(){
+  document.querySelector('#new-message-body-id').contentEditable=true;
+}
+
+function formatBold(){
+  document.getElementById("new-message-body-id").style.fontWeight = "bold";
+}
+
+function formatItalic(){
+  document.getElementById("new-message-body-id").style.fontStyle = "italic";
+}
+
+function formatUnderline(){
+  document.getElementById("new-message-body-id").style.textDecoration = "underline";
+}
 
 function xFun(){
   let newArr1 = [...document.querySelectorAll('.nav-list')];
@@ -388,3 +418,30 @@ function createElements(data_key, dataSet){
 
     email_ul_list.appendChild(email_ul_li_list)
 }
+
+var grd=document.querySelector('.grid-container');
+
+document.addEventListener('click',function(e){
+  if(e.target.getAttribute('id')==='app_menu'){
+    document.querySelector('.help_wrapper').style.display='none';
+    grd.style.display='grid';
+    }
+  else if(e.target.getAttribute('id')==='search'){
+    window.open("https://www.google.com", "_blank", );
+  }
+  else if(e.target.getAttribute('id')==='search'){
+    window.open("https://www.google.com", "_blank", );
+  }
+  else if(e.target.getAttribute('id')==='youtube' ||e.target.getAttribute('id')==='youid' ||e.target.getAttribute('id')==='span'){
+    window.open("https://www.youtube.com", "_blank", );
+  }
+  else if(e.target.getAttribute('id')==='question'){
+    grd.style.display='none';
+    document.querySelector('.help_wrapper').style.display='block';
+  }
+  else{
+    grd.style.display='none';
+    document.querySelector('.help_wrapper').style.display='none';
+  }
+  }
+)
